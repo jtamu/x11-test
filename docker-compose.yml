@@ -1,0 +1,13 @@
+services:
+  xeyes:
+    build:
+      args:
+        - USER_ID=${UID:-1000}
+        - GROUP_ID=${GID:-1000}
+    shm_size: 4096m
+    tty: true
+    environment:
+      - DISPLAY=${DISPLAY}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    user: ${UID:-1000}:${GID:-1000}
