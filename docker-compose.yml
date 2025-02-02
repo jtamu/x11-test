@@ -4,6 +4,7 @@ services:
       args:
         - USER_ID=${UID:-1000}
         - GROUP_ID=${GID:-1000}
+    image: x11client
     shm_size: 4096m
     tty: true
     environment:
